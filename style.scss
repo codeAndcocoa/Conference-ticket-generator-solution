@@ -1,0 +1,438 @@
+//Font
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap');
+
+$f-family: (
+    "Inconsolata",
+    monospace
+);
+
+$f-weights :('regular':400, 'medium':500, 'bold':700, 'extraBold':800);
+
+$labels-f-size : 1.25rem;
+
+//Color
+
+/* Neutrals */
+$neutral1: hsl(0, 0%, 100%);
+/* Neutral 0 */
+$neutral2: hsl(252, 6%, 83%);
+/* Neutral 300  */
+$neutral3: hsl(245, 15%, 58%);
+/*  Neutral 500  */
+$neutral4: hsl(245, 19%, 35%);
+/* Neutral 700  */
+$neutral5: hsl(248, 70%, 10%);
+/* Neutral 900 */
+
+
+/* Oranges */
+$orange1: hsl(7, 88%, 67%);
+/* Orange 500 */
+$orange2: hsl(7, 71%, 60%);
+/* Orange 700 */
+
+/* Gradient */
+$gradient: linear-gradient(to right, rgb(243, 115, 98), hsl(0, 0%, 100%));
+/* Gradient (text) */
+
+*,
+*::after,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $f-family;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-image: url(./assets/images/background-desktop.png);
+    background-repeat: no-repeat;
+    background-position: 100% 10%;
+overflow-x: hidden;
+
+}
+
+//Section + main
+
+main,
+header {
+    width: 100%;
+
+}
+
+
+
+
+
+ .patterns {
+    position: absolute;
+    z-index: -1;
+   
+}
+
+.squiggly {
+    top:1rem;
+    right: 2rem;
+}
+
+.circle1 {
+    left: 2rem;
+    top: -2rem;
+} 
+.circle2{
+    top:22rem;
+    right: 7rem;
+}
+.ribbon{
+    
+    bottom: 0 rem;
+    left: 0rem;
+}
+
+//HEADER
+
+
+header {
+    text-align: center;
+    padding: 2rem;
+
+    .title,
+    .ticket-title {
+        color: $neutral1;
+
+    }
+
+    h1 {
+        margin-top: 2rem;
+        margin-bottom: 1rem;
+        font-weight: map-get($map: $f-weights, $key: 'bold');
+        font-size: clamp(2rem, 3vw, 3rem);
+    }
+
+    p {
+        font-size: 1.2rem;
+        font-weight: map-get($map: $f-weights, $key: 'medium');
+    }
+}
+
+.ticket-title {
+
+    span {
+        background-image: $gradient;
+        color: transparent;
+        background-clip: text;
+
+    }
+}
+
+//Form 
+.ticket-form {
+
+    max-width: 43%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.input-field {
+
+    padding: 1rem;
+
+    label {
+        color: $neutral1;
+        font-size: $labels-f-size;
+
+    }
+
+    input {
+        width: 98%;
+        padding: 1rem;
+        margin-top: 1rem;
+        background-color: rgba($neutral3, 0.2);
+        border: 1.7px solid $neutral2 ;
+        border-radius: 5px;
+        font-size: 1.1rem;
+        font-weight: map-get($map: $f-weights, $key: 'medium');
+        color: $neutral1;
+        cursor: pointer;
+
+        &::placeholder {
+            color: $neutral2;
+            font-size: 1rem;
+
+        }
+
+        &:hover {
+            background-color: rgba($neutral2, 0.3);
+        }
+
+       
+    }
+}
+
+.submit-form-btn {
+    width: 98%;
+    outline: none;
+    border: none;
+    background-color: $orange1;
+    color: $neutral5 ;
+    font-size: 0.88rem;
+    padding: 1rem;
+    margin-top: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $orange2;
+    }
+}
+
+.user-image {
+    label:nth-of-type(2) {
+        border: 2px dashed $neutral3;
+        border-radius: 10px;
+        display: block;
+        background-color: rgba($neutral3, 0.2);
+        padding: 1.5rem 1rem;
+        margin: 0.5rem auto;
+        text-align: center;
+        cursor: pointer;
+
+        &:hover {
+            background-color: rgba($neutral2, 0.3);
+        }
+    }
+
+    .cloud {
+
+        width: 60px;
+        background-color: rgba($neutral2, 0.3);
+        border-radius: 10px;
+    }
+
+    span {
+        color: $neutral3;
+        font-size: 0.77rem;
+        font-weight: map-get($map: $f-weights, $key: 'regular');
+        display: block;
+    }
+
+    span:first-child {
+        font-size: $labels-f-size;
+    }
+}
+
+.change-avatar {
+    font-family: $f-family;
+    text-align: center;
+
+    img {
+        width: 70px;
+        border-radius: 10px;
+        border: 1px solid $neutral2;
+    }
+
+    .change,
+    .remove {
+        cursor: pointer;
+        outline: none;
+        border: none;
+        padding: 0.3rem;
+        margin-top: 1rem;
+        font-size: 0.88rem;
+        background-color: rgba($neutral2, 0.3);
+        color: $neutral1;
+
+    }
+
+    .remove {
+        text-decoration: underline;
+    }
+}
+
+
+
+
+//TICKET
+.grid {
+    width: 37.5rem;
+    height: 18rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    background-image: url('./assets/images/pattern-ticket.svg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 100% ;
+    margin: 2rem auto;
+   
+    .cell {
+        color: $neutral1;
+        padding: 1rem 1.7rem;
+    }
+
+    .cell:first-child {
+        grid-area: 1/1/ span 1 /span 2;
+        
+    }
+
+    .cell:nth-of-type(2) {
+         grid-area: 2/1/ span 2 /span 2;
+      
+    }
+
+    .cell:last-child {
+     
+        grid-area: 1 / 3/ span 3 /span 2;
+       
+    }
+
+}
+
+.t-title {
+    margin-top: 2rem;
+    img {
+        width: 30px;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+        font-weight: map-get($map: $f-weights, $key: 'medium');
+    }
+}
+
+.t-info {
+    .t-image {
+        width: 60px;
+        height: 60px;
+        border-radius: 10px;
+        margin-right: 1rem;
+    }
+
+    .flex {
+        display: flex;
+        margin-top: 2rem;
+    }
+
+    .info {
+
+        p {
+            display: inline-flex;
+        }
+    }
+}
+
+.t-serial {
+    p {
+        color: $neutral3;
+        writing-mode: vertical-lr;
+
+        font-size: 1.7rem;
+        margin-top: 4rem;
+        line-height: 8;
+    }
+}
+
+.hidden {
+    display: none;
+}
+
+.error {
+    color: rgb(175, 61, 61);
+
+}
+
+// MEDIA QUERIES
+
+
+@media screen and (width <=1200px) {}
+
+
+@media screen and (width <=992px) {}
+
+@media screen and (width <=768px) {
+    body {
+        background-image: url(./assets/images/background-tablet.png);
+
+    }
+
+    .circle1,
+    .circle2 {
+        display: none;
+    }
+
+    .ticket-form {
+        max-width: 80%;
+    }
+
+}
+
+@media screen and (width <=500px) {
+    body {
+        background-image: url(./assets/images/background-mobile.png);
+
+    }
+
+    .ticket-form {
+        max-width: 95%;
+    }
+
+     .grid {
+        width: calc(23rem - 5px);
+        height: 13rem;       
+        
+
+        .cell {
+            font-size: 1rem;
+        }
+    }
+    .t-info {
+    .t-image {
+        width: 40px;
+        height: 40px;
+    }
+    }
+
+    .t-info{
+        .flex{
+            margin-top: -1rem;
+        }
+    }
+    .t-title {
+    margin-top: 2rem;
+    font-size: 1.2rem;
+    img {
+        width: 20px;
+    }
+}
+    .t-serial{
+        p{
+            line-height: 5;
+            margin-top: 2.6rem;
+        }
+    } 
+    .squiggly{
+        width: 13rem;
+        right: 1rem;
+    
+    }
+    .lines{
+        width: 100%;
+        top:0;
+    }
+    .ribbon{
+    width: 13rem;
+    bottom: 0 rem;
+    left: 0rem;
+}
+}
+
+
+@media screen and (width <=375px) {}

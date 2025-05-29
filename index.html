@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+    <title>Frontend Mentor | Conference ticket generator</title>
+    <style>
+        .attribution {
+            font-size: 15px;
+            text-align: center;
+            color: #fff;
+
+        }
+
+        .attribution a {
+            color: hsl(228, 45%, 44%);
+        }
+    </style>
+</head>
+
+<body>
+    <img src="./assets/images/pattern-squiggly-line-top.svg" alt="squiggly-line image" class="patterns  squiggly">
+   <img src="./assets/images/pattern-circle.svg" alt="circle image" class="patterns circle1"> 
+      <img src="./assets/images/pattern-lines.svg" alt="lines image" class="patterns lines">
+    <img src="./assets/images/pattern-circle.svg" alt="circle image" class="patterns circle2">  
+    <header>
+        <div class="logo">
+            <img src="/assets/images/logo-full.svg" alt="logo image">
+        </div>
+
+        <div class="title">
+            <h1>Your Journey to Coding Conf <br>2025 Starts Here! </h1>
+            <p>Secure your spot at next year's biggest coding conference.</p>
+        </div>
+        <div class="ticket-title hidden">
+            <h1>Congrats, <span class="ticket-title-username">nagl </span> Your ticket is ready.</h1>
+            <p>We've emailed your ticket to <span class="ticket-title-email">nagla</span> and will send updates in the
+                run up to the event.</p>
+        </div>
+    </header>
+    <main>
+        <section id="user-form">
+            <!-- Form starts -->
+            <form action="/" class="ticket-form">
+                <div class="input-field user-image">
+                    <label> Upload Avatar</label> <br>
+                    <label for="avatar">
+                        <img src="./assets/images/icon-upload.svg" alt="cloud icon" class="cloud">
+                        <input type="file" name="avatar" id="avatar" accept="image/png ,image/jpeg" hidden>
+                        <span>Drag and drop or click to upload</span>
+                    </label>
+
+                    <div class="change-avatar hidden">
+                        <img src="" class="">
+                        <div class="flex">
+                            <button type="button" class="remove">Remove image</button>
+                            <label for="other-avatar" class="change">
+                                Change image
+                                <input type="file" name="other-avatar" id="other-avatar" accept="image/png , image/jpeg"
+                                    hidden>
+                            </label>
+                        </div>
+                    </div>
+                    <span> &#x24D8;
+                        Upload your photo (JPG or PNG, max size: 500KB).</span>
+                    <p class="error"></p>
+                </div>
+                <div class="input-field user-name">
+                    <label for="u-name"> Full Name</label>
+                    <input type="text" name="u-name" id="u-name">
+                    <p class="error"></p>
+                </div>
+                <div class="input-field user-email">
+                    <label for="u-email"> Email Address</label>
+                    <input type="text" name="u-email" id="u-email" placeholder="example@email.com">
+                    <p class="error"></p>
+                </div>
+                <div class="input-field user-github">
+                    <label for="u-github"> GitHub Username</label>
+                    <input type="text" name="u-github" id="u-github" placeholder="@yourusername">
+                    <p class="error"></p>
+                </div>
+                <div class="input-field submit-btn">
+                    <button type="button" class="submit-form-btn"> Generate My Ticket </button>
+
+                </div>
+            </form>
+            <!-- Form ends -->
+        </section>
+        <section id="user-ticket" class="hidden"> 
+            <div class="ticket-content">
+                <div class="grid">
+                    <div class="cell t-title">
+                       
+                            <h2><img src="./assets/images/logo-mark.svg" alt="logo-mark">Coding Conf</h2>
+                            <p> Jan 31, 2025 / Austin, TX</p>
+                        
+                    </div>
+                    <div class="cell t-info">
+                        <div class="flex">
+                            <img src="./assets/images/image-avatar.jpg" alt="person photo" class="t-image">
+
+                            <address>
+                                <div class="info"><span>Jonatan Kristof</span><br>
+                                    <p><img src="./assets/images/icon-github.svg"
+                                            alt="github logo"><span>@jonatankristof0101</span></p>
+                                </div>
+                            </address>
+                        </div>
+                    </div>
+                    <div class="cell t-serial">
+                        <p>#10083</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+        Coded by <a href="#">Naglaa Raslan</a>.
+    </div>
+    <picture>
+  <source media="(max-width:768px)" srcset="./assets/images/pattern-squiggly-line-bottom-mobile-tablet.svg">
+
+  <img src="./assets/images/pattern-squiggly-line-bottom-desktop.svg" alt="ribbon" class="patterns ribbon">
+</picture>
+</body>
+
+</html>
